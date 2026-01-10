@@ -19,6 +19,10 @@
                 <button type="submit">Start</button>
             </div>
         </form>
+
+        <c:if test="${not empty errorMessage}">
+            <p>${errorMessage}</p>
+        </c:if>
     </div>
 </body>
 </html>

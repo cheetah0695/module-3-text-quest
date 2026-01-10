@@ -17,13 +17,17 @@ public class StartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("playerName");
-        if (name == null || name.trim().isEmpty()) {
-            name = "Mark Hoffman";
+        HttpSession session = req.getSession();
+
+        if (name == null || name.trim().isEmpty() || !name.matches("^\\p{L}+([ -]\\p{L}+)*$")) {
+            session.setAttribute("errorMessage", "Player name is invalid");
+            req.getRequestDispatcher("/index.jsp").forward(req, resp);
+            return;
         }
 
-        HttpSession session = req.getSession();
         session.setAttribute("playerName", name);
         session.setAttribute("gamesPlayed", 0);
+        session.setAttribute("errorMessage", "");
 
         resp.sendRedirect(req.getContextPath() + "/game?step=start");
     }

@@ -6,6 +6,6 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-    <h1>Error 404!</h1>
+    <h1>Step was not found!</h1>
 </body>
 </html>

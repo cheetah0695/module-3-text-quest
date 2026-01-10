@@ -22,7 +22,8 @@ public class GameServlet extends HttpServlet {
 
         QuestStep step = questService.getStep(stepId);
         if (step == null) {
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Step was not found!");
+            resp.sendRedirect(req.getContextPath() + "/error404.jsp");
+            return;
         }
 
         req.setAttribute("step", step);

@@ -6,6 +6,6 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-    <h1>Server error!</h1>
+    <h1>Internal server error</h1>
 </body>
 </html>

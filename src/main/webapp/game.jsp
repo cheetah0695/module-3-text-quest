@@ -38,6 +38,9 @@
                     <button class="play-again-button">
                         <a href="game?step=start">Play again</a>
                     </button>
+                    <button class="restart-button">
+                        <a href="start">Restart the game</a>
+                    </button>
                 </c:otherwise>
             </c:choose>
         </div>
